@@ -1,7 +1,4 @@
-
-
 import com.iesemilidarder.porjectozero.*;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import freemarker.template.Configuration;
 import org.apache.commons.lang3.StringUtils;
@@ -11,12 +8,13 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 import spark.template.freemarker.FreeMarkerEngine;
-
+import java.lang.reflect.Method;
+import java.util.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.lang.*;
 import static spark.Spark.*;
 
 /**
@@ -44,6 +42,8 @@ public class Launcher {
         DBObject dbo = lUser.get(0);
         log.info("Loading finished");
     }
+
+
 
     /**
      * Method to check html output or not
@@ -112,6 +112,25 @@ public class Launcher {
                 return mapper.writeValueAsString(lUser);
             }
         });
+
+
+        get("/restaurant2", (request, response) -> {
+            if (shouldReturnHtml(request)) {
+                Map<String, Object> model = new HashMap<>();
+                model.put("posts", ConexionBaseDeDatos.readRestaurant(""));
+                model.put("title", "Restaurants");
+                model.put("subtitle", "List of all restaurants");
+                return getFreemarkerEngine().render(
+                        new ModelAndView(model, "basicView.ftl")
+                );
+            } else {
+                CorsFilter.apply();
+                ObjectMapper mapper = new ObjectMapper();
+                setResponseHeader(response, false);
+                return mapper.writeValueAsString(ConexionBaseDeDatos.readRestaurant(""));
+            }
+        });
+
         /*get("/scrap",(request,response)->{
             Map<String, Object> model = new HashMap<>();
             String query = ".center-content";

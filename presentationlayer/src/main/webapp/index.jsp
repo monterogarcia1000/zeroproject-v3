@@ -67,7 +67,7 @@
         <!-- Mostramos por pantalla los contenidos de la base de datos -->
         <%
             ConexionBaseDeDatos conexionBaseDeDatos = new ConexionBaseDeDatos();
-            ArrayList rst = conexionBaseDeDatos.readRestaurant(request.getParameter("cercar"));
+            ArrayList rst = (ArrayList) conexionBaseDeDatos.readRestaurant(request.getParameter("cercar"));
             Iterator itr = rst.iterator();
             while (itr.hasNext()){
                 Restaurant rstt = (Restaurant) itr.next();
