@@ -1,4 +1,4 @@
-package com.iesemilidarder.porjectozero;
+package com.iesemilidarder.core;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -131,52 +131,5 @@ public class ConexionBaseDeDatos {
 
         return rstt;
     }
-
-//E
-
-    public ArrayList TipoRestaurante(String tipores) {
-
-        ArrayList arl = new ArrayList();
-
-        try {
-
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-
-            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@35.205.41.45:1521:XE", "usuari", "usuari");
-
-            Statement stmt = con.createStatement();
-            ResultSet rs;
-
-            rs = stmt.executeQuery("SELECT * FROM (SELECT RE.RES_NOM, RE.RES_ADRECA, RE.RES_WEB, RE.RES_TELEFON, RE.RES_URL_IMG, RR.TRS_DESCRIPCIO, RE.RES_CODI FROM RESTAURANTS RE, TRESTAURANTS RR WHERE RE.RES_TRS_CODI = RR.TRS_CODI AND RR.TRS_CODI= " + tipores + " ORDER BY RES_MITJANA DESC)where ROWNUM <= 5");
-
-            while (rs.next()) {
-
-                Restaurant rstt = new Restaurant();
-
-                rstt.setNombre(rs.getString("RES_NOM"));
-                rstt.setDireccion(rs.getString("RES_ADRECA"));
-                rstt.setWeb(rs.getString("RES_WEB"));
-                rstt.setTelefono(rs.getString("RES_TELEFON"));
-                rstt.setTipo(rs.getString("TRS_DESCRIPCIO"));
-                rstt.setUrl_imagen(rs.getString("RES_URL_IMG"));
-                rstt.setID(rs.getString("RES_CODI"));
-
-                arl.add(rstt);
-
-            }
-
-            stmt.close();
-            con.close();
-
-        }catch (Exception c){
-
-            System.out.println(c.toString());
-
-        }
-
-        return arl;
-
-    }
-
 
 }

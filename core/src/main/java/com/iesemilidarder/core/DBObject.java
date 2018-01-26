@@ -1,4 +1,4 @@
-package com.iesemilidarder.porjectozero;
+package com.iesemilidarder.core;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

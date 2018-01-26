@@ -1,4 +1,4 @@
-package com.iesemilidarder.porjectozero;
+package com.iesemilidarder.core;
 
 import java.util.List;
 

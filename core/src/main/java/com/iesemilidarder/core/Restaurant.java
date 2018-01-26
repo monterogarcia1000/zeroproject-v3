@@ -1,4 +1,4 @@
-package com.iesemilidarder.porjectozero;
+package com.iesemilidarder.core;
 // Objeto para guardar los restaurantes
 
 import java.util.ArrayList;
