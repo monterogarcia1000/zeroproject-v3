@@ -1,4 +1,4 @@
-import com.iesemilidarder.porjectozero.*;
+import com.iesemilidarder.core.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import freemarker.template.Configuration;
 import org.apache.commons.lang3.StringUtils;
