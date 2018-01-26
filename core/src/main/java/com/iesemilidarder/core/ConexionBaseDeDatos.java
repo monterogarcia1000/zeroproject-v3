@@ -74,7 +74,8 @@ public class ConexionBaseDeDatos {
 
     }
 
-//Metodo que lee el Servlet
+//Metodo que lee el Servlet para mostrarnos la informacion de un restaurante en concreto
+
     public Restaurant readRestaurant2(String idInformacio){
 
         Restaurant rstt = null;

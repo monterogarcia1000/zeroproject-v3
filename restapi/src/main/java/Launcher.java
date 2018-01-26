@@ -27,6 +27,9 @@ import static spark.Spark.*;
  * <p>
  * a(10)
  */
+
+//Base de datos interna para aprender a usar la rest API
+
 public class Launcher {
     private static List<User> lUser = new ArrayList<User>();
     private static final Logger log = LoggerFactory.getLogger(Launcher.class);
@@ -75,6 +78,8 @@ public class Launcher {
         }
     }
 
+//Empezamos a utilizar SPARK
+
     public static void main(String... args) {
         staticFiles.location("/public");
         init();
@@ -113,6 +118,7 @@ public class Launcher {
             }
         });
 
+// Pequeña parte de una API rest que nos enseña los restaurantes de la base de datos
 
         get("/restaurant2", (request, response) -> {
             if (shouldReturnHtml(request)) {

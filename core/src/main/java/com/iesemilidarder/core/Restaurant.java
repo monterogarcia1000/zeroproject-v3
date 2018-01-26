@@ -89,6 +89,8 @@ public class Restaurant {
         this.tipo = tipo;
     }
 
+//Contructor de los comentarios
+
     public Restaurant() {
         this.opinions = new ArrayList<String>();
     }
