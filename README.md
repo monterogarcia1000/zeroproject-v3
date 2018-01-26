@@ -31,8 +31,6 @@ Introduces several concepts, like:
 - Basic interface concepts
 Abstract class that implements part of an interface to generalize Business objects
 
-![Basic UML](/basicUML2.jpg)
-
 - Maximizes code re-usage trough abstract classes for serialization
 - Will include hsql
 - May include Spring data if needed 
