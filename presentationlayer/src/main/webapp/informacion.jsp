@@ -1,5 +1,5 @@
-<%@ page import="com.iesemilidarder.porjectozero.ConexionBaseDeDatos" %>
-<%@ page import="com.iesemilidarder.porjectozero.Restaurant" %>
+<%@ page import="com.iesemilidarder.core.ConexionBaseDeDatos" %>
+<%@ page import="com.iesemilidarder.core.Restaurant" %>
 <%@page import="java.util.*" %>
 <%@page import="java.lang.String" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

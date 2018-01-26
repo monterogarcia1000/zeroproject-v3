@@ -1,6 +1,6 @@
 package com.iesemilidarder.porjectozero.web;
 
-import com.iesemilidarder.porjectozero.ConexionBaseDeDatos;
+import com.iesemilidarder.core.ConexionBaseDeDatos;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
