@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba res</title>
+</head>
+<body>
+    <h1 id="mytitle">Rest mola y lo sabes</h1>
+    <div class="myusers"></div>
+
+    <!-- Libreria por cdn de jquery -->
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+
+    <!-- el '$' lanza la libreria de jQuery y el 'document' hace que se ejecute cuando el DOM este cargado -->
+    <!-- lo utilizamos para no tener que estar pintando la pagina a cada rato -->
+    <script>
+        $(document).ready(function () {
+            console.log($("#mytitle").html());
+            $.get("/users", function (data) {
+                console.log(data);
+                var contentHtml = "<h2>Usuarios del sistema</h2>";
+                $.each(data, function (index, value) {
+                    var cell = "<div>Name:"+value.name+"</div>";
+                    contentHtml += cell;
+                });
+                $(".myusers").html(contentHtml);
+                console.log("Load was performed.");
+            });
+        });
+    </script>
+</body>
+</html>

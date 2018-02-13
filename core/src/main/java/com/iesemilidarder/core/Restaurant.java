@@ -1,22 +1,33 @@
 package com.iesemilidarder.core;
 // Objeto para guardar los restaurantes
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import java.util.ArrayList;
+
+@Entity
 
 public class Restaurant {
 
+    @Column(name="RES_NOM")
     private String nombre;
 
+    @Column(name="RES_ADRECA")
     private  String direccion;
 
+    @Column(name="RES_WEB")
     private String web;
 
+    @Column(name="RES_TELEFON")
     private  String telefono;
 
+    @Column(name="RES_URL_IMG")
     private String url_imagen;
 
+    @Column(name="TRS_DESCRIPCIO")
     private String tipo;
 
+    @Column(name="RES_CODI")
     private String ID;
 
 //Utilizamos una ArrayList para guardar los comentarios
